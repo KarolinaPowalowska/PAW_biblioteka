@@ -1,1 +1,18 @@
 .venv/
+# Środowisko wirtualne
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+.vscode/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Dane lokalne / poufne
+.env
