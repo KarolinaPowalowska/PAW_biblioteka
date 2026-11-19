@@ -72,6 +72,9 @@ table {
 
     margin: 20px 0;
 }
+.table-container {
+    overflow-x: auto;
+}
 th,
 td {
     border: 1px solid #cccccc;
@@ -121,7 +124,11 @@ textarea {
 
     box-sizing: border-box;
 }
-button {
+
+button,
+.button-link {
+    display: inline-block;
+
     background-color: #ff448f;
     color: white;
 
@@ -130,9 +137,13 @@ button {
 
     padding: 10px 16px;
 
+    text-decoration: none;
+
     cursor: pointer;
 }
-button:hover {
+
+button:hover,
+.button-link:hover {
     background-color: #ff4596;
 }
 footer {
@@ -172,13 +183,17 @@ footer {
 }
 .book-card {
     flex: 1 1 250px;
-
+    display: flex;
+    flex-direction: column;
     border: 1px solid #cccccc;
     border-radius: 6px;
 
     padding: 15px;
 
     background-color: #fafafa;
+}
+.book-card .button-link {
+    margin-top: auto;
 }
 .search-form {
     display: flex;
