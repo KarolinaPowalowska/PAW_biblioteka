@@ -1,12 +1,56 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse(
-        "<h1>Biblioteka</h1>"
-        "<p>Aplikacja Django działa poprawnie.</p>"
+    return render(
+        request,
+        "biblioteka/home.html",
     )
 
 
 def book_list(request):
-    return HttpResponse("<h1>Lista książek</h1>")
+    books = [
+        {
+            "title": "Solaris",
+            "author": "Stanisław Lem",
+            "year": 1961,
+            "available": True,
+            "category": "Science fiction",
+        },
+        {
+            "title": "Lalka",
+            "author": "Bolesław Prus",
+            "year": 1890,
+            "available": False,
+            "category": "Powieść realistyczna",
+        },
+        {
+            "title": "Hobbit",
+            "author": "J.R.R. Tolkien",
+            "year": 1937,
+            "available": True,
+            "category": "Fantasy",
+        },
+    ]
+
+    context = {
+        "books": books,
+    }
+
+    return render(
+        request,
+        "biblioteka/book_list.html",
+        context,
+    )
+
+def author_list(request):
+    return render(
+        request,
+        "biblioteka/author_list.html",
+    )
+
+def contact(request):
+    return render(
+        request,
+        "biblioteka/contact.html",
+    )
